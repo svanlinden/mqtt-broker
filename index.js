@@ -18,3 +18,15 @@ io.on('connection', function(socket) {
     io.emit('message', msg);
   });
 });
+
+let port = process.env.PORT || 1883;
+
+let mosca = require("mosca");
+let settings = {
+  port: port
+};
+let broker = new mosca.Server(settings);
+
+broker.on("ready", () => {
+  alert("Broker is ready!");
+})
