@@ -19,11 +19,10 @@ io.on('connection', function(socket) {
   });
 });
 
-let port = process.env.PORT || 1883;
 
 let mosca = require("mosca");
 let settings = {
-  port: port
+  port: PORT
 };
 let broker = new mosca.Server(settings);
 
